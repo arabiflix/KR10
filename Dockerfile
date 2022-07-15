@@ -20,7 +20,6 @@ COPY deploy-container/rclone-tasks.json /tmp/rclone-tasks.json
 RUN sudo chown -R coder:coder /home/coder/.local
 RUN sudo apt-get update
 RUN sudo apt-get install -y gnupg
-RUN sudo usermod -l arabiflix coder
 
 # You can add custom software and dependencies for your environment below
 # -----------
@@ -49,6 +48,7 @@ RUN sudo gpasswd -a arabiflix docker
 RUN sudo service docker restart
 RUN sudo su
 
+RUN sudo docker run -p 6070:80 dorowu/ubuntu-desktop-lxde-vnc -y
 # Port
 ENV PORT=8080
 
