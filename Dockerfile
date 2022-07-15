@@ -40,7 +40,7 @@ RUN sudo apt-get install -y gnupg
 
 RUN sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-RUN sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable"
+RUN sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 RUN sudo apt update
 RUN sudo apt install docker-ce
 
