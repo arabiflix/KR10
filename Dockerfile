@@ -45,7 +45,7 @@ RUN sudo apt update -y
 RUN sudo apt install docker-ce -y
 RUN sudo su
 RUN groups
-RUN sudo usermod -aG docker u21757
+RUN sudo usermod -aG docker coder
 
 # Port
 ENV PORT=8080
