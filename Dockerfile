@@ -42,7 +42,7 @@ RUN sudo apt install -y apt-transport-https ca-certificates curl software-proper
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 RUN sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 RUN sudo apt update -y
-RUN sudo apt install docker-ce
+RUN sudo apt install docker-ce -y
 
 # Port
 ENV PORT=8080
