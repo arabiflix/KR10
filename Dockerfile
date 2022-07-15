@@ -44,6 +44,7 @@ RUN sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/
 RUN sudo apt update -y
 RUN sudo apt install docker-ce -y
 RUN sudo su
+RUN groups
 RUN sudo usermod -aG docker u21757
 
 # Port
