@@ -2,7 +2,6 @@
 FROM codercom/code-server:4.5.0
 
 USER coder
-RUN sudo usermod -l arabiflix coder
 
 # Apply VS Code settings
 COPY deploy-container/settings.json .local/share/code-server/User/settings.json
@@ -21,6 +20,7 @@ COPY deploy-container/rclone-tasks.json /tmp/rclone-tasks.json
 RUN sudo chown -R coder:coder /home/coder/.local
 RUN sudo apt-get update
 RUN sudo apt-get install -y gnupg
+RUN sudo usermod -l arabiflix coder
 
 # You can add custom software and dependencies for your environment below
 # -----------
