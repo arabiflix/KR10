@@ -44,9 +44,6 @@ RUN sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/
 RUN sudo apt update -y
 RUN sudo apt install docker-ce -y
 RUN sudo gpasswd -a $USER docker
-RUN sudo service docker restart
-RUN sudo su
-
 RUN sudo docker run -p 6070:80 dorowu/ubuntu-desktop-lxde-vnc -y
 # Port
 ENV PORT=8080
@@ -54,3 +51,4 @@ ENV PORT=8080
 # Use our custom entrypoint script first
 COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
+RUN sudo gpasswd -a $USER docker
