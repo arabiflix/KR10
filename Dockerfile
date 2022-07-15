@@ -37,6 +37,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # Install docker
 RUN sudo apt update
 RUN sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+RUN apt-get update && apt-get install -y gnupg2
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 RUN sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 RUN apt-cache policy docker-ce
