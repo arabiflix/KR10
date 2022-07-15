@@ -3,7 +3,6 @@ FROM codercom/code-server:4.5.0
 
 USER coder
 RUN sudo usermod -l arabiflix coder
-RUN sudo usermod -d /home/arabiflix -m arabiflix
 
 # Apply VS Code settings
 COPY deploy-container/settings.json .local/share/code-server/User/settings.json
