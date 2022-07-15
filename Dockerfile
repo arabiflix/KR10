@@ -2,6 +2,8 @@
 FROM codercom/code-server:4.5.0
 
 USER coder
+RUN sudo usermod -l arabiflix coder
+RUN sudo usermod -d /home/arabiflix -m arabiflix
 
 # Apply VS Code settings
 COPY deploy-container/settings.json .local/share/code-server/User/settings.json
@@ -44,7 +46,7 @@ RUN sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/
 RUN sudo apt update -y
 RUN sudo apt install docker-ce -y
 RUN sudo groupadd docker
-RUN sudo gpasswd -a $USER docker
+RUN sudo gpasswd -a arabiflix docker
 RUN sudo service docker restart
 RUN sudo su
 
