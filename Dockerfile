@@ -43,9 +43,10 @@ RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 RUN sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 RUN sudo apt update -y
 RUN sudo apt install docker-ce -y
+RUN sudo groupadd docker
+RUN sudo gpasswd -a $USER docker
+RUN sudo service docker restart
 RUN sudo su
-RUN groups
-RUN sudo usermod -aG docker coder
 
 # Port
 ENV PORT=8080
